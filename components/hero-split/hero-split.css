@@ -1,0 +1,307 @@
+/* صفحة نصفين — جوال أولاً؛ عمود الصورة يظهر من 960px (لابتوب عادي) وليس 1280px */
+
+.hero-split {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hero-split__visual {
+  display: none;
+  border-radius: 44px;
+  overflow: hidden;
+}
+
+.hero-split__panel {
+  width: 100%;
+  padding: 24px 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-split__panel-inner {
+  width: min(26rem, 100%);
+}
+
+.hero-split__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-split__visual--media {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-split__visual--media .hero-split__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none; /* يبطل reset.css img{max-width:100%} حتى تملأ العمود على اللابتوب */
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 960px) {
+  .hero-split {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .hero-split > .hero-split__visual {
+    display: block;
+    flex: 0 0 45%;
+    width: 45%;
+    max-width: 45%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 44px;
+  }
+
+  .hero-split > .hero-split__visual .hero-split__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-split__img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-split__visual--media {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .hero-split__panel {
+    flex: 1 1 55%;
+    width: 55%;
+    min-width: 0;
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    padding: 40px 69px;
+  }
+}
+
+/* خلفية صفحات المصادقة — كانت سابقاً في core/auth-background.css */
+body.auth-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.page-wrap {
+  position: relative;
+}
+
+.page-wrap__content {
+  position: relative;
+  z-index: 1;
+}
+
+body.auth-page .hero-split__panel {
+  background-color: color-mix(in srgb, var(--color-bg) 90%, transparent);
+  padding: 0;
+  /* منع قص أفقي للوغو/النموذج مع overflow-y على العمود في كروم */
+  overflow-x: visible;
+  overflow-y: auto;
+}
+
+/* لا padding على hero-split؛ المسافة 25px من الحواف على .page-wrap في صفحات login/create-account */
+body.auth-page .hero-split {
+  /*
+   * مع dir=rtl على html، الشبكة تعكس الأعمدة فتظهر الصورة يميناً والنموذج يساراً.
+   * ltr هنا يثبت ترتيب DOM: عمود الصورة يسار، اللوحة يمين (المحتوى RTL داخل اللوحة عبر dir على العناصر).
+   */
+  direction: ltr;
+  unicode-bidi: isolate;
+  gap: 25px;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: calc(100vh - 50px);
+  max-height: calc(100vh - 50px);
+}
+
+@media (min-width: 960px) {
+  /*
+   * صفحات تسجيل الدخول/التسجيل: flex + gap + عرض % لكل عمود يتجاوز 100% في كروم فيُقص
+   * عمود اللوحة (واللوغو) عند التكبير 100%؛ Grid مع fr يوزع المساحة بعد الـ gap تلقائياً.
+   */
+  body.auth-page .hero-split {
+    display: grid;
+    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+    align-items: stretch;
+    height: calc(100vh - 50px);
+  }
+
+  body.auth-page .hero-split > .hero-split__visual {
+    width: auto;
+    max-width: none;
+    flex: unset;
+    height: 100%;
+    min-height: 0;
+  }
+
+  body.auth-page .hero-split > .hero-split__panel {
+    width: auto;
+    max-width: none;
+    flex: unset;
+    min-width: min(33.125rem, 100%);
+    min-height: 0;
+    height: auto;
+    align-self: stretch;
+  }
+}
+
+body.auth-page .hero-split__panel-inner {
+  width: 100%;
+  max-width: 33.125rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 959px) {
+  body.auth-page .hero-split__visual {
+    display: block;
+    width: 100%;
+    flex: 0 0 auto;
+    min-height: 200px;
+    height: min(44vw, 280px);
+    max-height: 300px;
+  }
+
+  body.auth-page .hero-split__visual--media {
+    min-height: 100%;
+    height: 100%;
+  }
+
+  body.auth-page .hero-split {
+    min-height: calc(100vh - 50px);
+    max-height: none;
+    height: auto;
+  }
+
+  body.auth-page .hero-split__panel {
+    min-height: 0;
+    flex: 1 1 auto;
+  }
+
+  body.auth-page .hero-split--login .hero-split__visual--media {
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+}
+
+/* شريط البصري — موضع القص (يمكن تعديله لكل صفحة عبر صورة مختلفة) */
+.auth-page .hero-split__visual--media .hero-split__img {
+  object-fit: cover;
+  object-position: center;
+  max-width: none;
+  max-height: none;
+}
+
+.auth-page .hero-split__visual--media .hero-split__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-text-dark) 32%, transparent) 0%,
+    transparent 38%,
+    color-mix(in srgb, var(--color-text-dark) 52%, transparent) 100%
+  );
+}
+
+/* شريط علوي 84px — بامتداد كامل لعرض عمود الهيرو */
+.hero-split__visual--media .hero-split__top-banner {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  height: 84px;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  margin-inline: 0;
+  box-sizing: border-box;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-split__top-banner-backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-surface);
+  border-radius: inherit;
+}
+
+.hero-split__top-banner-shapes {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.hero-split__top-banner-hex {
+  position: absolute;
+  display: block;
+  width: clamp(56px, 8vw, 90px);
+  height: auto;
+  transform: rotate(20.53deg);
+}
+
+.hero-split__top-banner-hex--a1 {
+  left: 17%;
+  top: 38%;
+}
+
+.hero-split__top-banner-hex--a2 {
+  left: 72%;
+  top: -65%;
+}
+
+.hero-split__top-banner-hex--b1 {
+  left: -6%;
+  top: -42%;
+  width: clamp(62px, 8.5vw, 96px);
+}
+
+.hero-split__top-banner-hex--b2 {
+  left: 84%;
+  top: -52%;
+  width: clamp(62px, 8.5vw, 96px);
+}
+
+.hero-split__top-banner-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(217, 217, 217, 0.7);
+  transform: translateY(-50%);
+}
+
+.auth-page .hero-split__visual--media .hero-split__copy {
+  z-index: 3;
+}

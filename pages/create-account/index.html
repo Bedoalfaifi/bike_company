@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>إنشاء حساب · Drajah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../core/reset.css" />
+    <link rel="stylesheet" href="../../core/tokens.css" />
+    <link rel="stylesheet" href="create-account.css" />
+  </head>
+  <body class="auth-page">
+    <div class="page-wrap">
+      <div class="page-wrap__content">
+    <section class="hero-split hero-split--login" aria-label="تسجيل شركة">
+      <div class="hero-split__visual hero-split__visual--media">
+        <!-- نفس ملف ووضع القصّ والطبقات كصفحة تسجيل الدخول (المعلمة تمنع كاش صورة التسجيل القديمة) -->
+        <img
+          class="hero-split__img"
+          src="../../assets/images/hero-split-login.jpg?v=2"
+          alt=""
+          width="1600"
+          height="1200"
+          decoding="async"
+        />
+        <div class="hero-split__scrim" aria-hidden="true"></div>
+        <div class="hero-split__copy" dir="rtl">
+          <h1 class="hero-split__title">انضم لمجتمع الدراجيين في السعودية</h1>
+          <p class="hero-split__subtitle">سجل شركتك وابدأ الوصول لآلاف الدراجيين النشطين</p>
+        </div>
+      </div>
+
+      <div class="hero-split__panel">
+        <div class="hero-split__panel-inner" dir="rtl">
+          <div class="brand">
+            <img
+              class="brand-logo"
+              src="../../assets/images/brand-logo.svg"
+              alt="Drajah"
+              width="94"
+              height="56"
+              decoding="async"
+            />
+          </div>
+
+          <div class="tabs auth-tabs" role="tablist" aria-label="نوع الدخول">
+            <a href="../login/index.html" class="tab inactive" role="tab" aria-selected="false">تسجيل دخول</a>
+            <span class="tab active" role="tab" aria-selected="true" aria-current="page">إنشاء حساب جديد</span>
+          </div>
+
+          <form class="register-form" id="register-form" novalidate>
+            <p class="form-feedback" id="form-feedback" role="alert" hidden></p>
+
+            <div class="field-stack">
+              <span class="input-label input-label--multiline">صورة شعار الشركة</span>
+              <div class="file-upload" data-file-upload>
+                <input class="upload-file-input" type="file" id="logo" name="logo" accept="image/svg+xml,image/png,image/jpeg,image/gif" />
+                <div class="upload-area">
+                  <div class="upload-icon-wrap" aria-hidden="true">
+                    <img
+                      src="../../assets/images/upload-photo-icon.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                  <div class="upload-actions" dir="rtl">
+                    <button type="button" class="upload-link" data-upload-trigger>انقر للتحميل</button>
+                    <button type="button" class="upload-drag-hint" data-upload-trigger>أو اسحب وأفلت هنا</button>
+                  </div>
+                  <p class="upload-hint upload-hint--secondary" data-upload-hint>SVG, PNG, JPG or GIF (max. 800×400px)</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="input-text">
+                <label class="input-label" for="company-name">اسم الشركة</label>
+                <input
+                  class="input-field"
+                  id="company-name"
+                  name="companyName"
+                  type="text"
+                  autocomplete="organization"
+                  placeholder="اكتب اسم الشركة"
+                  required
+                />
+              </div>
+              <div class="field-stack">
+                <span class="input-label" id="company-phone-label">رقم جوال الشركة</span>
+                <div class="input-group input-group--prefix-start" role="group" aria-labelledby="company-phone-label">
+                  <span class="input-group-prefix">
+                    <span class="input-latin">+966</span>
+                  </span>
+                  <input
+                    id="company-phone"
+                    name="companyPhone"
+                    type="tel"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    maxlength="9"
+                    minlength="9"
+                    autocomplete="tel"
+                    placeholder="5xxxxxxxx"
+                    title="9 أرقام بدون الصفر أو رمز الدولة"
+                    class="input-latin"
+                    dir="ltr"
+                    aria-required="true"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="select-field">
+                <label class="input-label" for="city">المدينة</label>
+                <div class="select-wrap">
+                  <select class="select-input" id="city" name="city" required>
+                    <option value="">اختر المدينة</option>
+                    <option value="riyadh">الرياض</option>
+                    <option value="jeddah">جدة</option>
+                    <option value="makkah">مكة المكرمة</option>
+                    <option value="madinah">المدينة المنورة</option>
+                    <option value="dammam">الدمام</option>
+                    <option value="khobar">الخبر</option>
+                    <option value="tabuk">تبوك</option>
+                    <option value="abha">أبها</option>
+                    <option value="buraidah">بريدة</option>
+                  </select>
+                  <img
+                    class="select-chevron"
+                    src="../../assets/images/chevron-down.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                  />
+                </div>
+              </div>
+
+              <div class="field-stack">
+                <label class="input-label" for="website-url">رابط موقع الشركة</label>
+                <div class="input-group input-group--prefix-start">
+                  <span class="input-group-prefix"><span class="input-latin">https://</span></span>
+                  <input
+                    id="website-url"
+                    name="websiteUrl"
+                    type="text"
+                    inputmode="url"
+                    autocomplete="url"
+                    placeholder="www.example.com"
+                    class="input-latin"
+                    dir="ltr"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-stack tag-section">
+              <span class="input-label">تصنيف الشركة</span>
+              <div class="tag-row" data-tag-group dir="rtl" aria-label="تصنيف الشركة">
+                <button type="button" class="tag selected" data-tag data-category="services">خدمات</button>
+                <button type="button" class="tag" data-tag data-category="products">منتجات</button>
+                <button type="button" class="tag" data-tag data-category="transport">نقل</button>
+                <button type="button" class="tag" data-tag data-category="events">فعاليات</button>
+                <button type="button" class="tag" data-tag data-category="repair">تصليح وتعديل</button>
+              </div>
+              <input type="hidden" name="companyCategory" id="company-category" value="services" />
+            </div>
+
+            <div class="field-stack">
+              <span class="input-label input-label--multiline">إرفاق شهادة السجل التجاري</span>
+              <div class="file-upload" data-file-upload>
+                <input class="upload-file-input" type="file" id="commercial-register" name="commercialRegister" accept="application/pdf,.pdf" />
+                <div class="upload-area">
+                  <div class="upload-icon-wrap" aria-hidden="true">
+                    <img
+                      src="../../assets/images/upload-cloud-icon.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                  <div class="upload-actions" dir="rtl">
+                    <button type="button" class="upload-link" data-upload-trigger>انقر للتحميل</button>
+                    <button type="button" class="upload-drag-hint" data-upload-trigger>أو اسحب وأفلت هنا</button>
+                  </div>
+                  <p class="upload-hint upload-hint--secondary" data-upload-hint>ملف PDF فقط</p>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="submit-register">تسجيل</button>
+          </form>
+        </div>
+      </div>
+    </section>
+      </div>
+    </div>
+
+    <script src="../../core/config.js"></script>
+    <script src="../../core/utils.js"></script>
+    <script src="../../core/api.js"></script>
+    <script src="../../components/file-upload/file-upload.js"></script>
+    <script src="../../components/tag/tag.js"></script>
+    <script src="../../components/button/button.js"></script>
+    <script src="create-account.js"></script>
+  </body>
+</html>

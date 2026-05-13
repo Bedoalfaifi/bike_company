@@ -1,0 +1,29 @@
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.tag {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 6px 12px;
+  font-size: 14px;
+  font-family: var(--font-arabic);
+  color: var(--color-text-dark);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  border: none;
+}
+
+.tag.selected {
+  background: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.tag:focus,
+.tag:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

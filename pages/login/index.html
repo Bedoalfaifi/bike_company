@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>تسجيل الدخول · Drajah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../core/reset.css" />
+    <link rel="stylesheet" href="../../core/tokens.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body class="auth-page">
+    <div class="page-wrap">
+      <div class="page-wrap__content">
+    <section class="hero-split hero-split--login" aria-label="تسجيل الدخول">
+      <div class="hero-split__visual hero-split__visual--media">
+        <!-- صورة الشريط البصري: استبدلها بتصدير من Figma (نفس الملف لصفحتي الدخول والتسجيل) -->
+        <img
+          class="hero-split__img"
+          src="../../assets/images/hero-split-login.jpg?v=2"
+          alt=""
+          width="1600"
+          height="1200"
+          decoding="async"
+        />
+        <div class="hero-split__scrim" aria-hidden="true"></div>
+        <div class="hero-split__copy" dir="rtl">
+          <h1 class="hero-split__title">انضم لمجتمع الدراجيين في السعودية</h1>
+          <p class="hero-split__subtitle">سجل شركتك وابدأ الوصول لآلاف الدراجيين النشطين</p>
+        </div>
+      </div>
+
+      <div class="hero-split__panel">
+        <div class="hero-split__panel-inner" dir="rtl">
+          <div class="brand">
+            <img
+              class="brand-logo"
+              src="../../assets/images/brand-logo.svg"
+              alt="Drajah"
+              width="94"
+              height="56"
+              decoding="async"
+            />
+          </div>
+
+          <div class="tabs auth-tabs" role="tablist" aria-label="نوع الدخول">
+            <span class="tab active" role="tab" aria-selected="true" aria-current="page">تسجيل دخول</span>
+            <a href="../create-account/index.html" class="tab inactive" role="tab" aria-selected="false">إنشاء حساب جديد</a>
+          </div>
+
+          <p id="login-device-check" class="login-page-loading" dir="rtl" aria-live="polite">
+            جارٍ التحقق من الجهاز…
+          </p>
+
+          <form class="login-form" id="login-form" hidden novalidate>
+            <p class="form-feedback" id="form-feedback" role="alert" hidden></p>
+
+            <div class="input-text">
+              <label class="input-label" for="user-id-input">رقم المستخدم</label>
+              <input
+                class="input-field"
+                id="user-id-input"
+                name="username"
+                type="tel"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                autocomplete="username"
+                placeholder="أدخل رقم المستخدم"
+                required
+              />
+            </div>
+
+            <div class="password-field">
+              <label class="input-label" for="pass-input">كلمة المرور</label>
+              <div class="password-field__wrap" dir="rtl">
+                <input
+                  class="password-field__input"
+                  id="pass-input"
+                  type="password"
+                  name="password"
+                  autocomplete="current-password"
+                  placeholder="ادخل كلمة المرور"
+                  required
+                />
+                <button type="button" class="password-field__toggle" aria-label="إظهار كلمة المرور" aria-pressed="false">
+                  <img src="../../assets/images/icon-eye-hidden.svg" alt="" width="24" height="24" />
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="submit-login">تسجيل الدخول</button>
+          </form>
+        </div>
+      </div>
+    </section>
+      </div>
+    </div>
+
+    <script src="../../core/config.js"></script>
+    <script src="../../components/password-field/password-field.js"></script>
+    <script src="../../components/button/button.js"></script>
+    <script src="../../core/utils.js"></script>
+    <script src="../../core/api.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>

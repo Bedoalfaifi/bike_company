@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>ملف الشركة · Drajah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../core/reset.css" />
+    <link rel="stylesheet" href="../../core/tokens.css" />
+    <link rel="stylesheet" href="../../core/responsive.css" />
+    <link rel="stylesheet" href="profile.css?v=9" />
+    <link rel="stylesheet" href="../../components/input-text/input-text.css" />
+    <link rel="stylesheet" href="../../components/input-prefix/input-prefix.css" />
+    <link rel="stylesheet" href="../../components/button/button.css" />
+    <link rel="stylesheet" href="../../components/file-upload/file-upload.css" />
+  </head>
+  <body class="profile-page">
+    <p id="error-msg" class="profile-page__error" role="alert" hidden></p>
+    <div class="profile-wrap">
+      <aside class="profile-sidebar sidebar" aria-label="التنقل">
+        <button type="button" class="profile-sidebar__mobile-close" aria-label="إغلاق القائمة">
+          <span class="profile-sidebar__mobile-close-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </span>
+        </button>
+        <button type="button" class="profile-sidebar__collapse" aria-expanded="true" aria-label="طي الشريط الجانبي">
+          <span class="profile-sidebar__collapse-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+        <div class="profile-sidebar__inner">
+          <div class="profile-sidebar__brand">
+            <a class="profile-sidebar__logo" href="../home/index.html" aria-label="الرئيسية">
+              <img
+                class="profile-sidebar__logo-img"
+                src="../../assets/images/brand-logo.svg"
+                alt=""
+                width="34"
+                height="20"
+                decoding="async"
+              />
+            </a>
+          </div>
+          <nav id="profile-sidebar-nav" class="profile-sidebar__nav" aria-label="قائمة التنقل">
+            <a class="profile-sidebar__nav-link profile-sidebar__nav-link--active" href="../home/index.html" aria-label="لوحة التحكم">
+              <img class="profile-sidebar__nav-icon profile-sidebar__nav-icon--dashboard" src="../../assets/images/profile-sidebar/icon-grid-gold.svg" alt="" width="24" height="24" decoding="async" />
+            </a>
+          </nav>
+          <div class="profile-sidebar__footer">
+            <img id="sidebar-avatar" class="profile-sidebar__user" src="" alt="" width="32" height="32" />
+            <button type="button" id="logout-btn" class="profile-sidebar__logout" aria-label="تسجيل الخروج">
+              <span class="profile-sidebar__logout-inner" aria-hidden="true">
+                <svg class="profile-sidebar__logout-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <button
+        type="button"
+        class="profile-sidebar__peek"
+        aria-label="إظهار قائمة التنقل"
+        aria-expanded="false"
+        aria-controls="profile-sidebar-nav"
+      >
+        <span class="profile-sidebar__peek-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </span>
+      </button>
+      <div class="profile-sidebar__backdrop" aria-hidden="true"></div>
+
+      <div class="profile-stage main-content">
+        <header class="profile-breadcrumb" aria-label="مسار الصفحة">
+          <div class="profile-breadcrumb__row">
+            <p class="profile-breadcrumb__current">ملف الشركة</p>
+            <svg
+              class="profile-breadcrumb__chevron"
+              xmlns="http://www.w3.org/2000/svg"
+              width="5"
+              height="7"
+              viewBox="0 0 5 7"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M4.32031 0.820312L1.64062 3.5L4.32031 6.17969L3.5 7L0 3.5L3.5 0L4.32031 0.820312Z"
+                fill="#CBD5E1"
+              />
+            </svg>
+          </div>
+        </header>
+
+        <main class="profile-main">
+        <section class="profile-card profile-card--company profile-info-card" aria-labelledby="company-name">
+          <div class="profile-card__banner" aria-hidden="true">
+            <div class="profile-card__banner-backdrop"></div>
+            <div class="profile-card__banner-shapes">
+              <img
+                class="profile-card__banner-hex profile-card__banner-hex--a1"
+                src="../../assets/images/profile-banner/hex-outline-a.svg"
+                alt=""
+                width="102"
+                height="122"
+                decoding="async"
+              />
+              <img
+                class="profile-card__banner-hex profile-card__banner-hex--a2"
+                src="../../assets/images/profile-banner/hex-outline-a.svg"
+                alt=""
+                width="102"
+                height="122"
+                decoding="async"
+              />
+              <img
+                class="profile-card__banner-hex profile-card__banner-hex--b1"
+                src="../../assets/images/profile-banner/hex-outline-b.svg"
+                alt=""
+                width="112"
+                height="124"
+                decoding="async"
+              />
+              <img
+                class="profile-card__banner-hex profile-card__banner-hex--b2"
+                src="../../assets/images/profile-banner/hex-outline-b.svg"
+                alt=""
+                width="112"
+                height="124"
+                decoding="async"
+              />
+            </div>
+            <div class="profile-card__banner-divider"></div>
+          </div>
+
+          <div class="profile-card__body">
+            <div class="company-row">
+              <div class="company-row__avatar-wrap">
+                <img
+                  id="company-avatar"
+                  class="company-row__avatar"
+                  src=""
+                  alt=""
+                  width="168"
+                  height="168"
+                />
+              </div>
+              <div class="company-row__info">
+                <div class="company-row__header">
+                  <div class="company-row__title-group">
+                    <h1 id="company-name" class="company-row__name">—</h1>
+                    <p id="company-user-id" class="company-row__username"></p>
+                  </div>
+                </div>
+                <div class="company-row__website">
+                  <span class="company-row__website-label">موقع الشركة :</span>
+                  <a
+                    id="company-url"
+                    class="company-row__website-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  ></a>
+                </div>
+              </div>
+              <button type="button" class="company-row__edit btn-edit">
+                <span class="btn-edit__label">تعديل</span>
+                <span class="btn-edit__icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <hr class="profile-divider" />
+
+            <div class="info-strip" role="list">
+              <div class="info-item" role="listitem">
+                <div class="info-item__icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="info-item__text">
+                  <span class="info-item__label">شهادة السجل التجاري</span>
+                  <a
+                    id="company-certificate"
+                    class="info-item__value info-item__value--link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >عرض الشهادة</a
+                  >
+                </div>
+              </div>
+              <div class="info-item" role="listitem">
+                <div class="info-item__icon" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 3h7v7H3V3zM14 3h7v7h-7V3zM14 14h7v7h-7v-7zM3 14h7v7H3v-7z" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </div>
+                <div class="info-item__text">
+                  <span class="info-item__label">التصنيف</span>
+                  <span id="company-category" class="info-item__value">—</span>
+                </div>
+              </div>
+              <div class="info-item" role="listitem">
+                <div class="info-item__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M11 19h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="info-item__text">
+                  <span class="info-item__label">رقم الشركة</span>
+                  <span id="company-phone" class="info-item__value">—</span>
+                </div>
+              </div>
+              <div class="info-item" role="listitem">
+                <div class="info-item__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5" />
+                    <path d="M9 11V7a3 3 0 0 1 6 0v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="info-item__text">
+                  <span class="info-item__label">كلمة المرور</span>
+                  <span id="company-pass" class="info-item__value">—</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="events-section" class="profile-card profile-card--events" hidden aria-labelledby="events-heading">
+          <div class="events-header">
+            <h2 id="events-heading" class="events-header__title">
+              الفعاليات&nbsp;:&nbsp;<span id="events-count" class="events-header__count">0</span>
+            </h2>
+            <a href="../create-event/index.html" class="events-header__create btn-create-event">
+              انشاء فعالية
+            </a>
+          </div>
+          <div id="events-grid" class="events-grid" aria-live="polite"></div>
+        </section>
+
+        <section id="products-section" class="profile-card profile-card--products" hidden aria-labelledby="products-heading">
+          <div class="products-header">
+            <h2 id="products-heading" class="products-header__title">
+              المنتجات&nbsp;:<span id="products-count">0</span>
+            </h2>
+            <button type="button" class="products-header__add btn-add-product">إضافة منتج</button>
+          </div>
+          <div id="products-grid" class="products-grid" aria-live="polite"></div>
+        </section>
+        </main>
+      </div>
+    </div>
+
+    <div
+      id="edit-company-modal"
+      class="edit-company-modal"
+      hidden
+      aria-hidden="true"
+    >
+      <div class="edit-company-modal__backdrop" data-edit-company-close tabindex="-1"></div>
+      <div
+        class="edit-company-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="edit-company-title"
+      >
+        <div class="edit-company-modal__panel">
+          <header class="edit-company-modal__header">
+            <button
+              type="button"
+              class="edit-company-modal__close"
+              aria-label="إغلاق"
+              data-edit-company-close
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <div class="edit-company-modal__title-row">
+              <div class="edit-company-modal__featured-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h2 id="edit-company-title" class="edit-company-modal__title">تعديل بيانات الشركة</h2>
+            </div>
+          </header>
+
+          <form id="edit-company-form" class="edit-company-modal__form" novalidate>
+            <p id="edit-company-feedback" class="edit-company-modal__feedback" role="alert" hidden></p>
+
+            <div class="field-stack edit-company-modal__logo-block">
+              <span class="input-label input-label--multiline">صورة شعار الشركة</span>
+              <div class="edit-company-modal__logo-row">
+                <div class="edit-company-modal__logo-preview-wrap">
+                  <img
+                    id="edit-company-logo-preview"
+                    class="edit-company-modal__logo-preview"
+                    src=""
+                    alt=""
+                    width="64"
+                    height="64"
+                    hidden
+                  />
+                  <span id="edit-company-logo-placeholder" class="edit-company-modal__logo-placeholder" aria-hidden="true">
+                    <img src="../../assets/images/upload-photo-icon.svg" alt="" width="20" height="20" decoding="async" />
+                  </span>
+                </div>
+                <div class="file-upload edit-company-modal__file-upload" data-file-upload>
+                  <input
+                    class="upload-file-input"
+                    type="file"
+                    id="edit-company-logo"
+                    name="logo"
+                    accept="image/svg+xml,image/png,image/jpeg,image/gif"
+                  />
+                  <div class="upload-area edit-company-modal__dropzone" data-edit-company-dropzone>
+                    <div class="upload-actions" dir="rtl">
+                      <button type="button" class="upload-link" data-upload-trigger>انقر للتحميل</button>
+                      <button type="button" class="upload-drag-hint" data-upload-trigger>أو اسحب وأفلت هنا</button>
+                    </div>
+                    <p class="upload-hint upload-hint--secondary" data-upload-hint>
+                      SVG, PNG, JPG or GIF (max. 800×400px)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-grid-2 edit-company-modal__grid">
+              <div class="input-text">
+                <label class="input-label" for="edit-company-name">اسم الشركة</label>
+                <input
+                  class="input-field"
+                  id="edit-company-name"
+                  name="companyName"
+                  type="text"
+                  autocomplete="organization"
+                  placeholder="اكتب اسم الشركة"
+                  required
+                />
+              </div>
+              <div class="field-stack">
+                <span class="input-label" id="edit-company-phone-label">رقم الشركة</span>
+                <div
+                  class="input-group input-group--prefix-start"
+                  role="group"
+                  aria-labelledby="edit-company-phone-label"
+                >
+                  <span class="input-group-prefix">
+                    <span class="input-latin">+966</span>
+                  </span>
+                  <input
+                    id="edit-company-phone"
+                    name="companyPhone"
+                    type="tel"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    maxlength="9"
+                    minlength="9"
+                    autocomplete="tel"
+                    placeholder="5xxxxxxxx"
+                    title="9 أرقام بدون الصفر أو رمز الدولة"
+                    class="input-latin"
+                    dir="ltr"
+                    aria-required="true"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-stack">
+              <label class="input-label" for="edit-company-website">رابط موقع الشركة</label>
+              <div class="input-group input-group--prefix-start">
+                <span class="input-group-prefix">
+                  <span class="input-latin">https://</span>
+                </span>
+                <input
+                  id="edit-company-website"
+                  name="websiteUrl"
+                  type="text"
+                  inputmode="url"
+                  autocomplete="url"
+                  placeholder="www.example.com"
+                  class="input-latin"
+                  dir="ltr"
+                />
+              </div>
+            </div>
+
+            <div class="edit-company-modal__actions">
+              <button type="submit" class="btn-primary edit-company-modal__submit">حفظ التغييرات</button>
+              <button type="button" class="edit-company-modal__btn-cancel" data-edit-company-close>
+                إلغاء
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="create-event-modal"
+      class="create-event-modal edit-company-modal"
+      hidden
+      aria-hidden="true"
+    >
+      <div class="create-event-modal__backdrop edit-company-modal__backdrop" data-create-event-close tabindex="-1"></div>
+      <div
+        class="create-event-modal__dialog edit-company-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="create-event-title"
+      >
+        <div class="create-event-modal__panel edit-company-modal__panel">
+          <header class="create-event-modal__header edit-company-modal__header">
+            <button
+              type="button"
+              class="edit-company-modal__close"
+              aria-label="إغلاق"
+              data-create-event-close
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <div class="edit-company-modal__title-row">
+              <h2 id="create-event-title" class="edit-company-modal__title">انشاء فعالية</h2>
+            </div>
+          </header>
+
+          <form id="create-event-form" class="create-event-modal__form edit-company-modal__form" novalidate>
+            <p id="create-event-feedback" class="edit-company-modal__feedback" role="alert" hidden></p>
+
+            <div class="form-grid-2 edit-company-modal__grid">
+              <div class="input-text">
+                <label class="input-label" for="create-event-end-street">اسم الشارع</label>
+                <input
+                  class="input-field"
+                  id="create-event-end-street"
+                  name="end_street"
+                  type="text"
+                  autocomplete="street-address"
+                  placeholder="اسم الشارع"
+                  required
+                />
+              </div>
+              <div class="input-text">
+                <label class="input-label" for="create-event-end-location">موقع النهاية (إحداثيات)</label>
+                <input
+                  class="input-field input-latin"
+                  id="create-event-end-location"
+                  name="end_location"
+                  type="text"
+                  placeholder="21.600000,39.200000"
+                  dir="ltr"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="input-text">
+              <label class="input-label" for="create-event-end-time">وقت النهاية</label>
+              <input
+                class="input-field input-latin"
+                id="create-event-end-time"
+                name="end_time"
+                type="datetime-local"
+                dir="ltr"
+              />
+            </div>
+
+            <div class="form-grid-2 edit-company-modal__grid">
+              <div class="input-text">
+                <label class="input-label" for="create-event-path-length">طول المسار</label>
+                <input
+                  class="input-field input-latin"
+                  id="create-event-path-length"
+                  name="path_length"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="any"
+                  dir="ltr"
+                />
+              </div>
+              <div class="input-text">
+                <label class="input-label" for="create-event-number-log">عدد المشاركين</label>
+                <input
+                  class="input-field input-latin"
+                  id="create-event-number-log"
+                  name="number_log"
+                  type="number"
+                  inputmode="numeric"
+                  min="0"
+                  step="1"
+                  placeholder="عدد المشاركين"
+                  dir="ltr"
+                />
+              </div>
+            </div>
+
+            <div class="form-grid-2 edit-company-modal__grid">
+              <div class="input-text">
+                <label class="input-label" for="create-event-start-capacity">سعة المحرك من</label>
+                <input
+                  class="input-field input-latin"
+                  id="create-event-start-capacity"
+                  name="start_capacity"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="any"
+                  placeholder="سعة المحرك من"
+                  dir="ltr"
+                />
+              </div>
+              <div class="input-text">
+                <label class="input-label" for="create-event-end-capacity">سعة المحرك إلى</label>
+                <input
+                  class="input-field input-latin"
+                  id="create-event-end-capacity"
+                  name="end_capacity"
+                  type="number"
+                  inputmode="decimal"
+                  min="0"
+                  step="any"
+                  placeholder="سعة المحرك إلى"
+                  dir="ltr"
+                />
+              </div>
+            </div>
+
+            <div class="form-grid-2 edit-company-modal__grid">
+              <div class="input-text">
+                <label class="input-label" for="create-event-set-ar">نوع المسار بالعربي</label>
+                <input class="input-field" id="create-event-set-ar" name="set_ar" type="text" placeholder="نوع المسار بالعربي" />
+              </div>
+              <div class="input-text">
+                <label class="input-label" for="create-event-set-en">نوع المسار بالانجليزي</label>
+                <input
+                  class="input-field input-latin"
+                  id="create-event-set-en"
+                  name="set_en"
+                  type="text"
+                  placeholder="نوع المسار بالانجليزي"
+                  dir="ltr"
+                />
+              </div>
+            </div>
+
+            <div class="form-grid-2 edit-company-modal__grid">
+              <div class="input-text">
+                <label class="input-label" for="create-event-category-ar">فئة الدراجة بالعربي</label>
+                <input class="input-field" id="create-event-category-ar" name="category_ar" type="text" placeholder="فئة الدراجة بالعربي" />
+              </div>
+              <div class="input-text">
+                <label class="input-label" for="create-event-category-en">فئة الدراجة بالانجليزي</label>
+                <input
+                  class="input-field input-latin"
+                  id="create-event-category-en"
+                  name="category_en"
+                  type="text"
+                  placeholder="فئة الدراجة بالانجليزي"
+                  dir="ltr"
+                />
+              </div>
+            </div>
+
+            <div class="input-text">
+              <label class="input-label" for="create-event-bike-company">شركة الدراجة</label>
+              <input class="input-field" id="create-event-bike-company" name="bike_company" type="text" placeholder="شركة الدراجة" />
+            </div>
+
+            <div class="input-text">
+              <label class="input-label" for="create-event-gender">الجنس</label>
+              <select class="input-field" id="create-event-gender" name="gender">
+                <option value="">الكل</option>
+                <option value="1">ذكر</option>
+                <option value="2">أنثى</option>
+              </select>
+            </div>
+
+            <div class="edit-company-modal__actions">
+              <button type="submit" class="btn-primary edit-company-modal__submit">حفظ الفعالية</button>
+              <button type="button" class="edit-company-modal__btn-cancel" data-create-event-close>إلغاء</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="add-product-modal"
+      class="add-product-modal edit-company-modal"
+      hidden
+      aria-hidden="true"
+    >
+      <div class="edit-company-modal__backdrop" data-add-product-close tabindex="-1"></div>
+      <div
+        class="edit-company-modal__dialog add-product-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="add-product-title"
+      >
+        <div class="edit-company-modal__panel add-product-modal__panel">
+          <header class="edit-company-modal__header add-product-modal__header">
+            <button
+              type="button"
+              class="edit-company-modal__close"
+              aria-label="إغلاق"
+              data-add-product-close
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <div class="edit-company-modal__title-row">
+              <div class="edit-company-modal__featured-icon add-product-modal__featured-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none" class="add-product-modal__featured-svg">
+                  <path d="M21.6663 13V19.5C21.6663 21.8932 19.7262 23.8333 17.333 23.8333H8.66634C6.27311 23.8333 4.33301 21.8932 4.33301 19.5V13" stroke="#080613" stroke-width="1.5" />
+                  <path
+                    d="M18.1659 2.16666H7.8336C5.8648 2.16666 4.09435 3.51514 3.36315 5.57162L2.54201 7.8811C2.29344 8.5802 2.12162 9.32829 2.30292 10.0478C2.73229 11.7517 4.12533 13 5.77751 13C7.77187 13 9.38862 11.1811 9.38862 8.93749C9.38862 11.1811 11.0054 13 12.9997 13C14.9941 13 16.6108 11.1811 16.6108 8.93749C16.6108 11.1811 18.2276 13 20.222 13C21.8741 13 23.2672 11.7517 23.6966 10.0478C23.8779 9.32829 23.706 8.5802 23.4575 7.8811L22.6363 5.57162C21.9051 3.51514 20.1347 2.16666 18.1659 2.16666Z"
+                    stroke="#080613"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M9.75 18.4167C12.3025 19.8687 13.7015 19.8535 16.25 18.4167"
+                    stroke="#080613"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h2 id="add-product-title" class="edit-company-modal__title">إضافة منتج</h2>
+            </div>
+          </header>
+
+          <form id="add-product-form" class="add-product-modal__form edit-company-modal__form" novalidate>
+            <input type="hidden" id="add-product-edit-id" name="productEditId" value="" autocomplete="off" />
+            <p id="add-product-feedback" class="edit-company-modal__feedback" role="alert" hidden></p>
+
+            <div class="add-product-modal__images field-stack">
+              <span class="add-product-modal__images-label input-label">اضف صور المنتج (3 صور)</span>
+              <div class="add-product-modal__slots" dir="rtl">
+                <label class="add-product-modal__slot add-product-modal__slot--primary" data-product-slot="0">
+                  <input
+                    type="file"
+                    class="upload-file-input add-product-modal__file"
+                    id="add-product-image-0"
+                    name="productImage0"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                  />
+                  <span class="add-product-modal__slot-fill">
+                    <img
+                      class="add-product-modal__slot-preview"
+                      src=""
+                      alt=""
+                      width="162"
+                      height="128"
+                      decoding="async"
+                      hidden
+                    />
+                    <span class="add-product-modal__slot-upload-ui">
+                      <img
+                        class="add-product-modal__upload-icon"
+                        src="https://www.figma.com/api/mcp/asset/8ff51cdd-3bf0-41c6-a983-6598e579f652"
+                        alt=""
+                        width="59"
+                        height="59"
+                        decoding="async"
+                      />
+                      <span class="add-product-modal__upload-line">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          class="add-product-modal__upload-cloud"
+                          aria-hidden="true"
+                        >
+                          <g clip-path="url(#add_product_upload_clip)">
+                            <path d="M10.6663 10.6667L7.99967 8L5.33301 10.6667" stroke="#E1902B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 8V14" stroke="#E1902B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                              d="M13.5933 12.26C14.2435 11.9055 14.7572 11.3446 15.0532 10.6658C15.3493 9.98692 15.4108 9.22883 15.2281 8.51114C15.0454 7.79344 14.629 7.15702 14.0444 6.70231C13.4599 6.2476 12.7406 6.0005 12 6.00001H11.16C10.9582 5.2195 10.5821 4.4949 10.0599 3.88067C9.5378 3.26644 8.8832 2.77858 8.14537 2.45375C7.40754 2.12892 6.60567 1.97558 5.80005 2.00526C4.99443 2.03495 4.20602 2.24688 3.49409 2.62512C2.78216 3.00336 2.16525 3.53808 1.68972 4.18906C1.2142 4.84005 0.892434 5.59037 0.748627 6.38361C0.60482 7.17684 0.64271 7.99236 0.859449 8.76885C1.07619 9.54534 1.46613 10.2626 1.99997 10.8667"
+                              stroke="#E1902B"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="add_product_upload_clip">
+                              <rect width="16" height="16" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <span class="add-product-modal__upload-text">تحميل الصورة</span>
+                      </span>
+                    </span>
+                  </span>
+                </label>
+                <label class="add-product-modal__slot add-product-modal__slot--empty" data-product-slot="1">
+                  <input
+                    type="file"
+                    class="upload-file-input add-product-modal__file"
+                    id="add-product-image-1"
+                    name="productImage1"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                  />
+                  <span class="add-product-modal__slot-fill">
+                    <img class="add-product-modal__slot-preview" src="" alt="" width="162" height="128" decoding="async" hidden />
+                  </span>
+                </label>
+                <label class="add-product-modal__slot add-product-modal__slot--empty" data-product-slot="2">
+                  <input
+                    type="file"
+                    class="upload-file-input add-product-modal__file"
+                    id="add-product-image-2"
+                    name="productImage2"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                  />
+                  <span class="add-product-modal__slot-fill">
+                    <img class="add-product-modal__slot-preview" src="" alt="" width="162" height="128" decoding="async" hidden />
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field-stack add-product-modal__field">
+              <label class="input-label" for="add-product-name">اسم المنتج</label>
+              <input
+                class="input-field"
+                id="add-product-name"
+                name="productName"
+                type="text"
+                autocomplete="off"
+                placeholder="اكتب اسم القروب هنا"
+                required
+              />
+            </div>
+
+            <div class="form-grid-2 edit-company-modal__grid add-product-modal__grid-prices">
+              <div class="input-text">
+                <label class="input-label" for="add-product-price">السعر</label>
+                <input
+                  class="input-field"
+                  id="add-product-price"
+                  name="price"
+                  type="text"
+                  inputmode="decimal"
+                  placeholder="اكتب السعر هنا"
+                  required
+                />
+              </div>
+              <div class="input-text">
+                <label class="input-label" for="add-product-qty">الكمية</label>
+                <div class="add-product-modal__select-wrap">
+                  <select id="add-product-qty" name="quantity" class="input-field add-product-modal__select" required>
+                    <option value="">حدد الكمية</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field-stack add-product-modal__field">
+              <label class="input-label" for="add-product-desc">اكتب وصف المنتج</label>
+              <textarea
+                id="add-product-desc"
+                name="description"
+                class="input-field add-product-modal__textarea"
+                rows="3"
+                placeholder="اكتب هنا وصف المنتج"
+                required
+              ></textarea>
+            </div>
+
+            <div class="edit-company-modal__actions add-product-modal__actions">
+              <button type="submit" class="btn-primary edit-company-modal__submit">نشر المنتج</button>
+              <button type="button" class="edit-company-modal__btn-cancel" data-add-product-close>الغاء</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../core/config.js"></script>
+    <script>
+      (function () {
+        var s = document.createElement("script");
+        s.src =
+          "https://maps.googleapis.com/maps/api/js?key=" +
+          CONFIG.MAPS_KEY +
+          "&libraries=places&language=ar";
+        s.async = true;
+        s.defer = true;
+        document.head.appendChild(s);
+      })();
+    </script>
+    <script src="../../core/utils.js"></script>
+    <script src="../../core/api.js"></script>
+    <script src="../../components/file-upload/file-upload.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html>

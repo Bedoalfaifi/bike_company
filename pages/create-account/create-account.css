@@ -1,0 +1,212 @@
+/* عمود صورة الدرّاجة والنصوص: نفس ترتيب الاستيراد والقواعد كصفحة تسجيل الدخول */
+@import url("../login/login.css");
+@import url("../../components/input-prefix/input-prefix.css");
+@import url("../../components/select-field/select-field.css");
+@import url("../../components/file-upload/file-upload.css");
+@import url("../../components/tag/tag.css");
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+.register-form .btn-primary {
+  width: 100%;
+}
+
+.register-form .input-field {
+  box-sizing: border-box;
+  min-height: 52px;
+  padding: var(--space-md) 16px;
+}
+
+.register-form .input-group {
+  min-height: 52px;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.register-form .input-group-prefix,
+.register-form .input-group input {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 16px;
+}
+
+.register-form > .tag-section {
+  margin-block-start: calc(-1 * var(--space-md));
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .form-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.field-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.input-label--multiline {
+  line-height: 1.5;
+}
+
+.tag-section .tag-row {
+  width: 100%;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.tag-section .tag-row .tag {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .tag-section .tag-row {
+    flex-wrap: nowrap;
+  }
+
+  .tag-section .tag-row .tag {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .tag-section .tag-row .tag {
+    flex: 1 1 calc(50% - var(--space-xs) / 2);
+    min-width: min(100%, 9rem);
+  }
+}
+
+.upload-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.upload-drag-hint {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-arabic);
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 400;
+  color: var(--color-text-mid);
+  cursor: pointer;
+}
+
+.upload-icon-wrap img {
+  width: 20px;
+  height: 20px;
+}
+
+.upload-hint--secondary {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.input-latin {
+  font-family: var(--font-sans);
+  direction: ltr;
+  text-align: left;
+}
+
+.input-group input.input-latin {
+  font-family: var(--font-sans);
+}
+
+.field-error-message {
+  margin: 6px 0 0;
+  font-family: var(--font-arabic);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--color-error);
+}
+
+.has-error .input-field,
+.has-error .select-input,
+.has-error .input-group,
+.has-error .upload-area,
+.has-error .tag-row {
+  border-color: var(--color-error) !important;
+}
+
+.has-error .input-group {
+  box-shadow: 0 0 0 1px var(--color-error) inset;
+}
+
+.has-error .input-field:focus,
+.has-error .input-field:focus-visible {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 35%, transparent);
+}
+
+.has-error .select-input:focus,
+.has-error .select-input:focus-visible {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 35%, transparent);
+}
+
+.has-error .input-group:focus-within {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 35%, transparent);
+}
+
+.field-stack.has-error .file-upload:focus-within .upload-area {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 35%, transparent);
+}
+
+.register-success {
+  display: grid;
+  place-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.register-success[hidden] {
+  display: none;
+}
+
+.register-success__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--color-primary) 15%, transparent);
+  color: var(--color-primary);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.register-success__text {
+  margin: 0;
+  color: var(--color-text-dark);
+  font-family: var(--font-arabic);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.file-upload {
+  position: relative;
+}
+

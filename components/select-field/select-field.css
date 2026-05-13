@@ -1,0 +1,45 @@
+.select-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
+.select-wrap {
+  position: relative;
+}
+
+.select-input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 52px;
+  border: 1.6px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  padding-left: 44px;
+  font-size: 16px;
+  font-family: var(--font-arabic);
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  appearance: none;
+  direction: rtl;
+  text-align: right;
+}
+
+.select-input:focus,
+.select-input:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.select-chevron {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  right: auto;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}

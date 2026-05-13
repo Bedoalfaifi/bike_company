@@ -1,0 +1,21 @@
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.card__title {
+  font-family: var(--font-arabic);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.card__body {
+  font-family: var(--font-arabic);
+  font-size: 0.875rem;
+  color: var(--color-text-mid);
+  line-height: 1.55;
+}

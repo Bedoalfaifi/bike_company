@@ -1,0 +1,62 @@
+.input-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-label);
+  text-align: right;
+  margin-bottom: 6px;
+  display: block;
+  font-family: var(--font-arabic);
+}
+
+.input-group {
+  display: flex;
+  border: 1.6px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.input-group-prefix {
+  padding: 10px 14px;
+  color: var(--color-text-mid);
+  font-size: 16px;
+  font-family: var(--font-sans);
+  border-right: 1.6px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  text-align: right;
+  direction: rtl;
+  font-family: var(--font-arabic);
+  background: transparent;
+}
+
+.input-group input:focus {
+  outline: none;
+}
+
+.input-group:focus-within {
+  border-color: var(--color-primary);
+}
+
+/* بادئة ثابتة على اليسار (+966 ، https://) داخل نموذج RTL */
+.input-group.input-group--prefix-start {
+  direction: ltr;
+}
+
+.input-group.input-group--prefix-start .input-group-prefix {
+  flex-shrink: 0;
+}
+
+.input-group.input-group--prefix-start input,
+.input-group.input-group--prefix-start input.input-latin {
+  text-align: left;
+  direction: ltr;
+  font-family: var(--font-sans);
+}

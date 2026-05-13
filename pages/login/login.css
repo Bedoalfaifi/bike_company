@@ -1,0 +1,147 @@
+@import url("../../core/responsive.css");
+@import url("../../components/brand/brand.css");
+@import url("../../components/hero-split/hero-split.css");
+@import url("../../components/tabs/tabs.css");
+@import url("../../components/input-text/input-text.css");
+@import url("../../components/password-field/password-field.css");
+@import url("../../components/button/button.css");
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-arabic);
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+}
+
+.page-wrap {
+  padding: 25px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.hero-split--login {
+  direction: ltr;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.hero-split--login .hero-split__visual--media {
+  position: relative;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.hero-split--login .hero-split__copy {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: var(--space-lg);
+  text-align: center;
+  direction: rtl;
+  z-index: 1;
+}
+
+/* نصوص عمود الصورة — موحّدة لتسجيل الدخول وإنشاء الحساب (صفحة التسجيل تستورد هذا الملف) */
+.hero-split--login .hero-split__title {
+  align-self: stretch;
+  color: var(--color-bg);
+  text-align: center;
+  font-family: "IBM Plex Sans Arabic", var(--font-arabic), sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.4px;
+  max-width: none;
+}
+
+.hero-split--login .hero-split__subtitle {
+  align-self: stretch;
+  margin-top: var(--space-md);
+  color: var(--color-bg);
+  text-align: center;
+  font-family: "IBM Plex Sans Arabic", var(--font-arabic), sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: -0.2px;
+  max-width: none;
+}
+
+.hero-split--login .hero-split__panel-inner {
+  width: min(33.125rem, 100%);
+}
+
+.auth-tabs.tabs {
+  margin-bottom: 16px;
+}
+
+.hero-split--login .tabs .tab.active {
+  color: var(--color-bg);
+}
+
+.tabs a.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+.login-form .btn-primary {
+  width: 100%;
+}
+
+.login-form .input-field {
+  min-height: 52px;
+  padding: var(--space-md);
+}
+
+.form-feedback {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, var(--color-error) 35%, transparent);
+  background-color: color-mix(in srgb, var(--color-error) 10%, transparent);
+  font-family: var(--font-arabic);
+  font-size: 14px;
+  color: var(--color-error);
+}
+
+.form-feedback[hidden] {
+  display: none !important;
+}
+
+.hero-split--login .hero-split__visual--media .hero-split__scrim {
+  background: linear-gradient(0deg, var(--overlay-dark-40), var(--overlay-dark-40));
+}
+
+.login-page-loading {
+  margin: 0 0 var(--space-lg);
+  padding: var(--space-md) 0;
+  font-family: var(--font-arabic);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-text-mid);
+  text-align: center;
+}
+
+.login-page-loading[hidden] {
+  display: none !important;
+}
+
+#login-form[hidden] {
+  display: none !important;
+}
+

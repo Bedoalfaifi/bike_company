@@ -1,0 +1,69 @@
+:root {
+  /* Breakpoints (استخدم القيم المباشرة في @media لتوافق أفضل) */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1280px;
+
+  /* Colors */
+  --color-primary:       #E1902B;
+  --color-primary-light: #FFF8EF;
+  --color-primary-bg:    #FFFBF7;
+
+  --color-text-dark:     #171717;
+  --color-text-mid:      #525252;
+  --color-text-muted:    #737373;
+
+  --color-border:        #D4D4D4;
+  --color-border-light:  #E5E5E5;
+  --color-surface:       #f8f8f8;
+  --color-bg:            #FFFFFF;
+
+  --color-error:         #B42318;
+  --color-navy:          #172B4D;
+
+  --color-text-label:    #323130;
+  --color-tab-inactive:  #9C9AA5;
+
+  /* Extended palette (profile / marketing surfaces) */
+  --color-btn-inverse-bg: #040404;
+  --color-surface-muted: #f6f6f3;
+  --color-surface-tint: rgba(255, 255, 255, 0.7);
+  --color-text-slate-800: #1f2937;
+  --color-text-slate-700: #32343e;
+  --color-text-neutral-warm: #79747e;
+  --color-link: #1e40af;
+  --color-border-medium: #dcdcdc;
+  --overlay-dark-40: rgba(0, 0, 0, 0.4);
+
+  /* Border radius */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   20px;
+  --radius-pill: 44px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+
+  /* حلقة تركيز موحّدة (زر، حقل، رفع ملف، تبويب) */
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 38%, transparent);
+
+  /* Events (Figma profile — فعاليات) */
+  --color-events-header: #242731;
+  --color-event-active-bg: #eefbf4;
+  --color-event-active-text: #17663a;
+  --color-event-ended-bg: #fef0f4;
+  --color-event-ended-text: #d50b3e;
+  --color-events-empty: #94a3b8;
+  --color-event-card-border: rgba(220, 220, 220, 0.6);
+  --color-event-map-border: #d1d5db;
+  --color-event-delete-border: #e5e5e5;
+}

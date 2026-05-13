@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>انشاء فعالية · Drajah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Roboto:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../core/reset.css" />
+    <link rel="stylesheet" href="../../core/tokens.css" />
+    <link rel="stylesheet" href="../../core/responsive.css" />
+    <link rel="stylesheet" href="../profile/profile.css?v=9" />
+    <link rel="stylesheet" href="create-event.css?v=17" />
+  </head>
+  <body class="profile-page create-event-page" data-wizard-step="1">
+    <div class="profile-wrap">
+      <aside class="profile-sidebar sidebar" aria-label="التنقل">
+        <button type="button" class="profile-sidebar__mobile-close" aria-label="إغلاق القائمة">
+          <span class="profile-sidebar__mobile-close-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </span>
+        </button>
+        <button type="button" class="profile-sidebar__collapse" aria-expanded="true" aria-label="طي الشريط الجانبي">
+          <span class="profile-sidebar__collapse-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+        <div class="profile-sidebar__inner">
+          <div class="profile-sidebar__brand">
+            <a class="profile-sidebar__logo" href="../home/index.html" aria-label="الرئيسية">
+              <img
+                class="profile-sidebar__logo-img"
+                src="https://www.figma.com/api/mcp/asset/b7489698-63d3-42b2-a033-146124baa04b"
+                alt=""
+                width="34"
+                height="20"
+                decoding="async"
+              />
+            </a>
+          </div>
+          <nav id="profile-sidebar-nav" class="profile-sidebar__nav create-event-sidebar__nav" aria-label="قائمة التنقل">
+            <a class="profile-sidebar__nav-link" href="../profile/index.html" aria-label="البروفايل">
+              <img
+                class="profile-sidebar__nav-icon"
+                src="https://www.figma.com/api/mcp/asset/58d25002-5e22-443a-a5e5-1c6be07648a7"
+                alt=""
+                width="20"
+                height="20"
+                decoding="async"
+              />
+            </a>
+            <a
+              class="profile-sidebar__nav-link create-event-sidebar__nav-link--map-active profile-sidebar__nav-link--active"
+              href="#"
+              aria-label="الخريطة"
+              aria-current="page"
+            >
+              <img
+                class="profile-sidebar__nav-icon"
+                src="https://www.figma.com/api/mcp/asset/42e521fe-2b5f-40f8-8c9e-5ac8f511d12e"
+                alt=""
+                width="20"
+                height="20"
+                decoding="async"
+              />
+            </a>
+          </nav>
+          <div class="profile-sidebar__footer">
+            <img id="sidebar-avatar" class="profile-sidebar__user" src="" alt="" width="32" height="32" />
+            <button type="button" id="logout-btn" class="profile-sidebar__logout" aria-label="تسجيل الخروج">
+              <span class="profile-sidebar__logout-inner" aria-hidden="true">
+                <svg class="profile-sidebar__logout-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <button
+        type="button"
+        class="profile-sidebar__peek"
+        aria-label="إظهار قائمة التنقل"
+        aria-expanded="false"
+        aria-controls="profile-sidebar-nav"
+      >
+        <span class="profile-sidebar__peek-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </span>
+      </button>
+      <div class="profile-sidebar__backdrop" aria-hidden="true"></div>
+
+      <div class="profile-stage main-content create-event-stage">
+        <header class="profile-breadcrumb create-event-breadcrumb-wrap" aria-label="مسار الصفحة">
+          <div class="profile-breadcrumb__row create-event-breadcrumb__row">
+            <span class="create-event-breadcrumb__text create-event-breadcrumb__text--active">انشاء فعالية</span>
+            <img
+              class="create-event-breadcrumb__sep"
+              src="https://www.figma.com/api/mcp/asset/f8406d36-bd97-4ae3-b6b3-0476b80b4f62"
+              alt=""
+              width="5"
+              height="7"
+              decoding="async"
+            />
+            <span class="create-event-breadcrumb__text create-event-breadcrumb__text--muted">الخريطة</span>
+          </div>
+        </header>
+
+        <main class="create-event-main">
+          <div class="create-event-layout">
+            <aside class="create-event-stepper" aria-label="خطوات انشاء الفعالية">
+              <h2 class="create-event-stepper__heading">انشاء الفعالية</h2>
+              <ol class="create-event-stepper__list" role="list">
+                <li class="create-event-step">
+                  <div class="create-event-step__meta">
+                    <span class="create-event-step__badge create-event-step__badge--active" aria-current="step">
+                      <span class="create-event-step__badge-text">01</span>
+                      <img
+                        class="create-event-step__badge-check"
+                        src="https://www.figma.com/api/mcp/asset/b4d7927b-386f-4f13-abf6-7505fd174238"
+                        alt=""
+                        width="20"
+                        height="20"
+                        decoding="async"
+                        hidden
+                      />
+                    </span>
+                    <span class="create-event-step__label create-event-step__label--active">بيانات العدد والجنس</span>
+                  </div>
+                </li>
+                <li class="create-event-step">
+                  <div class="create-event-step__meta">
+                    <span class="create-event-step__badge">
+                      <span class="create-event-step__badge-text">02</span>
+                      <img
+                        class="create-event-step__badge-check"
+                        src="https://www.figma.com/api/mcp/asset/b4d7927b-386f-4f13-abf6-7505fd174238"
+                        alt=""
+                        width="20"
+                        height="20"
+                        decoding="async"
+                        hidden
+                      />
+                    </span>
+                    <span class="create-event-step__label">بيانات الدراجة</span>
+                  </div>
+                </li>
+                <li class="create-event-step">
+                  <div class="create-event-step__meta">
+                    <span class="create-event-step__badge">
+                      <span class="create-event-step__badge-text">03</span>
+                      <img
+                        class="create-event-step__badge-check"
+                        src="https://www.figma.com/api/mcp/asset/b4d7927b-386f-4f13-abf6-7505fd174238"
+                        alt=""
+                        width="20"
+                        height="20"
+                        decoding="async"
+                        hidden
+                      />
+                    </span>
+                    <span class="create-event-step__label">نوع المسار</span>
+                  </div>
+                </li>
+                <li class="create-event-step">
+                  <div class="create-event-step__meta">
+                    <span class="create-event-step__badge">
+                      <span class="create-event-step__badge-text">04</span>
+                      <img
+                        class="create-event-step__badge-check"
+                        src="https://www.figma.com/api/mcp/asset/b4d7927b-386f-4f13-abf6-7505fd174238"
+                        alt=""
+                        width="20"
+                        height="20"
+                        decoding="async"
+                        hidden
+                      />
+                    </span>
+                    <span class="create-event-step__label">اختر الوقت</span>
+                  </div>
+                </li>
+                <li class="create-event-step">
+                  <div class="create-event-step__meta">
+                    <span class="create-event-step__badge">
+                      <span class="create-event-step__badge-text">05</span>
+                      <img
+                        class="create-event-step__badge-check"
+                        src="https://www.figma.com/api/mcp/asset/b4d7927b-386f-4f13-abf6-7505fd174238"
+                        alt=""
+                        width="20"
+                        height="20"
+                        decoding="async"
+                        hidden
+                      />
+                    </span>
+                    <span class="create-event-step__label">التفاصيل انشاء الفاعلية</span>
+                  </div>
+                </li>
+              </ol>
+            </aside>
+
+            <section class="create-event-panel" aria-labelledby="create-event-step1-title">
+              <div class="create-event-panel__inner">
+                <p id="create-event-wizard-error" class="create-event-wizard-error" hidden role="alert"></p>
+                <div id="create-event-wizard-step-1" class="create-event-wizard-step">
+                  <div class="create-event-panel__sections">
+                    <div class="create-event-field">
+                      <div class="create-event-field__label-row create-event-field__label-row--lg">
+                        <h3 id="create-event-step1-title" class="create-event-field__title create-event-field__title--w349">اختر أعداد المراد اضافتهم</h3>
+                        <span class="create-event-field__req" aria-hidden="true">*</span>
+                      </div>
+                      <div class="create-event-counter">
+                        <div class="create-event-counter__side">
+                          <p class="create-event-counter__heading">اختيار المضافين</p>
+                          <p class="create-event-counter__hint">الحد الاقصى لعدد المضافين هو 20</p>
+                        </div>
+                        <div class="create-event-counter__controls" role="group" aria-label="عدد المضافين">
+                          <button type="button" class="create-event-counter__btn" id="create-event-count-minus" aria-label="تقليل العدد">
+                            <img src="https://www.figma.com/api/mcp/asset/f7e6e70d-c990-4bd7-849d-b04a701e2177" alt="" width="20" height="20" decoding="async" />
+                          </button>
+                          <span class="create-event-counter__value" id="create-event-count-value" aria-live="polite">1</span>
+                          <button type="button" class="create-event-counter__btn" id="create-event-count-plus" aria-label="زيادة العدد">
+                            <img src="https://www.figma.com/api/mcp/asset/60272e3e-8ddc-4191-ae01-58cb18c4fdd4" alt="" width="20" height="20" decoding="async" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="create-event-field create-event-field--gender">
+                      <div class="create-event-field__label-row create-event-field__label-row--lg">
+                        <h3 class="create-event-field__title create-event-field__title--w349">
+                          الجنس <span class="create-event-field__optional">(اختياري)</span>
+                        </h3>
+                      </div>
+                      <div class="create-event-gender" role="radiogroup" aria-label="الجنس">
+                        <button type="button" class="create-event-gender__opt" id="create-event-gender-male" role="radio" aria-checked="false" data-gender="1">
+                          <span class="create-event-gender__check" aria-hidden="true">
+                            <img class="create-event-gender__tick" src="https://www.figma.com/api/mcp/asset/8a820163-bf75-4a66-9671-6338c8280e06" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                          <span class="create-event-gender__inner">
+                            <span class="create-event-gender__text">ذكر</span>
+                            <span class="create-event-gender__icon-wrap" aria-hidden="true">
+                              <img class="create-event-gender__icon" src="../../assets/images/profile-sidebar/icon-person.svg" alt="" width="20" height="20" decoding="async" />
+                            </span>
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-gender__opt" id="create-event-gender-female" role="radio" aria-checked="false" data-gender="2">
+                          <span class="create-event-gender__check" aria-hidden="true">
+                            <img class="create-event-gender__tick" src="https://www.figma.com/api/mcp/asset/8a820163-bf75-4a66-9671-6338c8280e06" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                          <span class="create-event-gender__inner">
+                            <span class="create-event-gender__text">أنثى</span>
+                            <span class="create-event-gender__icon-wrap" aria-hidden="true">
+                              <img class="create-event-gender__icon" src="../../assets/images/profile-sidebar/icon-person.svg" alt="" width="20" height="20" decoding="async" />
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="create-event-wizard-step-2" class="create-event-wizard-step" hidden>
+                  <div class="create-event-panel__sections">
+                    <div class="create-event-field">
+                      <div class="create-event-field__label-row create-event-field__label-row--lg">
+                        <h3 id="create-event-step2-title" class="create-event-field__title create-event-field__title--w349">
+                          اختر فئة الدراجة <span class="create-event-field__optional">(اختياري)</span>
+                        </h3>
+                      </div>
+                      <div class="create-event-bike-grid" role="radiogroup" aria-label="فئة الدراجة">
+                        <button
+                          type="button"
+                          class="create-event-bike-card create-event-bike-card--text"
+                          data-category-ar="تورينق"
+                          data-category-en="TOURING"
+                          role="radio"
+                          aria-checked="false"
+                        >
+                          <span class="create-event-bike-card__label">تورينق</span>
+                          <span class="create-event-bike-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          class="create-event-bike-card create-event-bike-card--text"
+                          data-category-ar="سبورت"
+                          data-category-en="SPORT"
+                          role="radio"
+                          aria-checked="false"
+                        >
+                          <span class="create-event-bike-card__label">سبورت</span>
+                          <span class="create-event-bike-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          class="create-event-bike-card create-event-bike-card--text"
+                          data-category-ar="ادفنتشر"
+                          data-category-en="ADVENTURE"
+                          role="radio"
+                          aria-checked="false"
+                        >
+                          <span class="create-event-bike-card__label">ادفنتشر</span>
+                          <span class="create-event-bike-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          class="create-event-bike-card create-event-bike-card--text"
+                          data-category-ar="كلاسيك"
+                          data-category-en="CLASSIC"
+                          role="radio"
+                          aria-checked="false"
+                        >
+                          <span class="create-event-bike-card__label">كلاسيك</span>
+                          <span class="create-event-bike-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          class="create-event-bike-card create-event-bike-card--text"
+                          data-category-ar="كروزر"
+                          data-category-en="CRUISER"
+                          role="radio"
+                          aria-checked="false"
+                        >
+                          <span class="create-event-bike-card__label">كروزر</span>
+                          <span class="create-event-bike-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          class="create-event-bike-card create-event-bike-card--text"
+                          data-category-ar="كروس"
+                          data-category-en="CROSS"
+                          role="radio"
+                          aria-checked="false"
+                        >
+                          <span class="create-event-bike-card__label">كروس</span>
+                          <span class="create-event-bike-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          class="create-event-bike-card create-event-bike-card--text"
+                          data-category-ar="اندورو"
+                          data-category-en="ENDURO"
+                          role="radio"
+                          aria-checked="false"
+                        >
+                          <span class="create-event-bike-card__label">اندورو</span>
+                          <span class="create-event-bike-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          class="create-event-bike-card create-event-bike-card--text"
+                          data-category-ar="ناكد"
+                          data-category-en="NAKED"
+                          role="radio"
+                          aria-checked="false"
+                        >
+                          <span class="create-event-bike-card__label">ناكد</span>
+                          <span class="create-event-bike-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          class="create-event-bike-card create-event-bike-card--text"
+                          data-category-ar="كوفي ريسر"
+                          data-category-en="CAFE RACER"
+                          role="radio"
+                          aria-checked="false"
+                        >
+                          <span class="create-event-bike-card__label">كوفي ريسر</span>
+                          <span class="create-event-bike-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="create-event-field">
+                      <div class="create-event-field__label-row create-event-field__label-row--lg">
+                        <h3 class="create-event-field__title create-event-field__title--w349">
+                          اختر الشركة المصنعة <span class="create-event-field__optional">(اختياري)</span>
+                        </h3>
+                      </div>
+                      <div class="create-event-company-grid" role="radiogroup" aria-label="الشركة المصنعة">
+                        <button type="button" class="create-event-company-card" data-company="Aprilia" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Aprilia</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="BMW" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">BMW</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Can-Am" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Can-Am</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Cfmoto" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Cfmoto</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Ducati" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Ducati</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Harley-Davidson" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Harley-Davidson</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Honda" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Honda</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Indian" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Indian</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Kawasaki" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Kawasaki</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="KTM" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">KTM</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Royal Enfield" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Royal Enfield</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Suzuki" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Suzuki</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Triumph" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Triumph</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                        <button type="button" class="create-event-company-card" data-company="Yamaha" role="radio" aria-checked="false">
+                          <span class="create-event-company-card__text">Yamaha</span>
+                          <span class="create-event-company-card__tick" aria-hidden="true">
+                            <img src="https://www.figma.com/api/mcp/asset/f15941b1-f11f-4b37-bf9d-6e1da54954d3" alt="" width="24" height="24" decoding="async" />
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="create-event-wizard-step-3" class="create-event-wizard-step" hidden>
+                  <div class="create-event-panel__sections">
+                    <div class="create-event-field">
+                      <div class="create-event-field__label-row create-event-field__label-row--lg">
+                        <h3 id="create-event-step3-title" class="create-event-field__title create-event-field__title--w349">موقع الفعالية</h3>
+                        <span class="create-event-field__req" aria-hidden="true">*</span>
+                      </div>
+                      <div class="create-event-form-stack create-event-form-stack--step3-map" dir="rtl">
+                        <div class="create-event-form-group create-event-form-group--step3">
+                          <label class="create-event-form-label" for="ev-place-search">ابحث عن الموقع</label>
+                          <input
+                            type="text"
+                            id="ev-place-search"
+                            class="create-event-input"
+                            placeholder="ابحث عن شارع أو موقع..."
+                            autocomplete="off"
+                          />
+                        </div>
+                        <div id="ev-map-picker" class="create-event-map-picker" aria-label="اختيار موقع الفعالية على الخريطة"></div>
+                        <div class="create-event-form-group create-event-form-group--step3">
+                          <label class="create-event-form-label" for="ev-end-street">
+                            اسم الشارع
+                            <span class="create-event-req-star" aria-hidden="true">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            id="ev-end-street"
+                            class="create-event-input"
+                            placeholder="يتعبأ تلقائياً عند اختيار الموقع"
+                            readonly
+                          />
+                        </div>
+                        <input type="hidden" id="ev-end-location" value="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="create-event-wizard-step-4" class="create-event-wizard-step" hidden>
+                  <div class="create-event-panel__sections create-event-panel__sections--step4-mcp">
+                    <div class="create-event-field create-event-field--step4-mcp">
+                      <div class="create-event-field__label-row create-event-field__label-row--lg">
+                        <h3 id="create-event-step4-title" class="create-event-field__title create-event-field__title--w349 create-event-field__title--step4-mcp">
+                          وقت بداية الفعالية
+                        </h3>
+                        <span class="create-event-field__req" aria-hidden="true">*</span>
+                      </div>
+                      <div class="create-event-form-row create-event-form-row--step3-pair create-event-form-row--step4-datetime" dir="rtl">
+                        <div class="create-event-form-group create-event-form-group--step3">
+                          <label class="create-event-form-label" for="ev-start-date">التاريخ</label>
+                          <input
+                            type="date"
+                            id="ev-start-date"
+                            class="create-event-input"
+                            aria-label="تاريخ بداية الفعالية"
+                            autocomplete="off"
+                            dir="ltr"
+                          />
+                        </div>
+                        <div class="create-event-form-group create-event-form-group--step3">
+                          <label class="create-event-form-label" for="ev-start-time">الوقت</label>
+                          <input
+                            type="time"
+                            id="ev-start-time"
+                            class="create-event-input"
+                            step="60"
+                            aria-label="وقت بداية الفعالية"
+                            autocomplete="off"
+                            dir="ltr"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="create-event-wizard-step-5" class="create-event-wizard-step" hidden>
+                  <p id="create-event-submit-error" class="create-event-submit-error" hidden role="alert"></p>
+                  <div class="create-event-review create-event-review--simple">
+                    <div class="create-event-review__simple-grid" dir="rtl">
+                      <div
+                        class="create-event-review__right-stack create-event-review__right-stack--details"
+                        dir="rtl"
+                      >
+                        <div class="create-event-review-card create-event-review-card--figma">
+                          <h3 class="create-event-review-card__title">بيانات انشاء فعالية</h3>
+                          <div class="create-event-review-dl">
+                            <div class="create-event-review-dl__row" id="create-event-review-row-count" hidden>
+                              <span class="create-event-review-dl__label">اعداد المضافين</span>
+                              <span class="create-event-review-dl__val" id="create-event-review-count"></span>
+                            </div>
+                            <div class="create-event-review-dl__row" id="create-event-review-row-gender" hidden>
+                              <span class="create-event-review-dl__label">الجنس</span>
+                              <span class="create-event-review-dl__val" id="create-event-review-gender"></span>
+                            </div>
+                            <div class="create-event-review-dl__row" id="create-event-review-row-category" hidden>
+                              <span class="create-event-review-dl__label">فئة الدراجة</span>
+                              <span class="create-event-review-dl__val" id="create-event-review-category"></span>
+                            </div>
+                            <div class="create-event-review-dl__row" id="create-event-review-row-company" hidden>
+                              <span class="create-event-review-dl__label">الشركة المصنعة</span>
+                              <span class="create-event-review-dl__val">
+                                <span id="create-event-review-company-name" class="create-event-review-company-name"></span>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="create-event-review-card create-event-review-card--time create-event-review-card--figma create-event-review-card--time-only"
+                          id="create-event-review-time-card"
+                          hidden
+                        >
+                          <h3 class="create-event-review-card__title" id="create-event-step5-title">وقت الفعالية</h3>
+                          <div class="create-event-review-dl">
+                            <div class="create-event-review-dl__row" id="create-event-review-row-time-start">
+                              <span class="create-event-review-dl__label">وقت بداية الفعالية</span>
+                              <span class="create-event-review-dl__val" id="create-event-review-t-start" dir="rtl"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        id="create-event-review-route-card"
+                        class="create-event-review-card create-event-review-card--figma create-event-review-card--route-point"
+                        hidden
+                        dir="rtl"
+                      >
+                        <h3 class="create-event-review-card__title">المسار</h3>
+                        <div class="create-event-route-list create-event-route-list--review-single" aria-label="ملخص المسار">
+                          <div class="create-event-route-list__item create-event-route-list__item--single-only">
+                            <div class="create-event-route-list__rail create-event-route-list__rail--single" aria-hidden="true">
+                              <span class="create-event-route-list__pin">
+                                <img
+                                  src="https://www.figma.com/api/mcp/asset/bcbdb863-666d-4548-8fd7-269f87fd9917"
+                                  alt=""
+                                  width="22"
+                                  height="22"
+                                  decoding="async"
+                                />
+                              </span>
+                            </div>
+                            <div class="create-event-route-list__text">
+                              <p class="create-event-route-list__tag">نقطة الفعالية</p>
+                              <p class="create-event-route-list__name" id="create-event-review-start-point"></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="create-event-actions-1" class="create-event-actions">
+                  <a href="../profile/index.html" class="create-event-actions__secondary">الغاء</a>
+                  <button type="button" class="create-event-actions__primary" id="create-event-btn-next">التالي</button>
+                </div>
+                <div id="create-event-actions-mid" class="create-event-actions" hidden>
+                  <button type="button" class="create-event-actions__secondary create-event-wizard-prev">السابق</button>
+                  <button type="button" class="create-event-actions__primary" id="create-event-btn-wizard-next">التالي</button>
+                </div>
+                <div id="create-event-actions-final" class="create-event-actions" hidden>
+                  <button type="button" class="create-event-actions__secondary create-event-wizard-prev">السابق</button>
+                  <button type="button" class="create-event-actions__primary" id="create-event-btn-confirm">تاكيد</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="../../core/config.js"></script>
+    <script>
+      function gm_authFailure() {
+        var el = document.getElementById("ev-map-picker");
+        if (el) {
+          el.innerHTML =
+            '<p style="text-align:center;padding:20px;color:var(--color-events-empty)">تعذر تحميل الخريطة</p>';
+        }
+      }
+      window.initMapPicker = function () {
+        window.__mapsJsReady = true;
+        if (typeof window.__createEventMapBootstrap === "function") {
+          window.__createEventMapBootstrap();
+        }
+      };
+      (function () {
+        var s = document.createElement("script");
+        s.src =
+          "https://maps.googleapis.com/maps/api/js?key=" +
+          CONFIG.MAPS_KEY +
+          "&libraries=places&language=ar&callback=initMapPicker";
+        s.async = true;
+        s.defer = true;
+        document.head.appendChild(s);
+      })();
+    </script>
+    <script src="../../core/utils.js"></script>
+    <script src="../../core/api.js"></script>
+    <script src="create-event.js?v=19"></script>
+  </body>
+</html>

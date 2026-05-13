@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>تعديل الملف · Drajah</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../core/reset.css" />
+    <link rel="stylesheet" href="../../core/tokens.css" />
+    <link rel="stylesheet" href="../../core/responsive.css" />
+    <link rel="stylesheet" href="../profile/profile.css?v=2" />
+    <link rel="stylesheet" href="edit-profile.css" />
+    <link rel="stylesheet" href="../../components/input-text/input-text.css" />
+    <link rel="stylesheet" href="../../components/input-prefix/input-prefix.css" />
+    <link rel="stylesheet" href="../../components/file-upload/file-upload.css" />
+    <link rel="stylesheet" href="../../components/button/button.css" />
+  </head>
+  <body class="profile-page edit-profile-page">
+    <p id="edit-profile-page-error" class="profile-page__error" role="alert" hidden></p>
+    <div class="edit-profile-page__bar">
+      <a class="edit-profile-page__back" href="../profile/index.html">← العودة إلى الملف</a>
+    </div>
+
+    <div
+      id="edit-company-root"
+      class="edit-company-modal edit-company-modal--page is-open"
+      aria-hidden="false"
+    >
+      <div class="edit-company-modal__dialog" role="document">
+        <div class="edit-company-modal__panel">
+          <header class="edit-company-modal__header">
+            <div class="edit-company-modal__title-row">
+              <div class="edit-company-modal__featured-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h1 id="edit-company-title" class="edit-company-modal__title">تعديل بيانات الشركة</h1>
+            </div>
+          </header>
+
+          <form id="edit-company-form" class="edit-company-modal__form" novalidate>
+            <p id="edit-company-feedback" class="edit-company-modal__feedback" role="alert" hidden></p>
+
+            <div class="field-stack edit-company-modal__logo-block">
+              <span class="input-label input-label--multiline">صورة شعار الشركة</span>
+              <div class="edit-company-modal__logo-row">
+                <div class="edit-company-modal__logo-preview-wrap">
+                  <img
+                    id="edit-company-logo-preview"
+                    class="edit-company-modal__logo-preview"
+                    src=""
+                    alt=""
+                    width="64"
+                    height="64"
+                    hidden
+                  />
+                  <span id="edit-company-logo-placeholder" class="edit-company-modal__logo-placeholder" aria-hidden="true">
+                    <img src="../../assets/images/upload-photo-icon.svg" alt="" width="20" height="20" decoding="async" />
+                  </span>
+                </div>
+                <div class="file-upload edit-company-modal__file-upload" data-file-upload>
+                  <input
+                    class="upload-file-input"
+                    type="file"
+                    id="edit-company-logo"
+                    name="logo"
+                    accept="image/svg+xml,image/png,image/jpeg,image/gif"
+                  />
+                  <div class="upload-area edit-company-modal__dropzone" data-edit-company-dropzone>
+                    <div class="upload-actions" dir="rtl">
+                      <button type="button" class="upload-link" data-upload-trigger>انقر للتحميل</button>
+                      <button type="button" class="upload-drag-hint" data-upload-trigger>أو اسحب وأفلت هنا</button>
+                    </div>
+                    <p class="upload-hint upload-hint--secondary" data-upload-hint>
+                      SVG, PNG, JPG or GIF (max. 800×400px)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-grid-2 edit-company-modal__grid">
+              <div class="input-text">
+                <label class="input-label" for="edit-company-name">اسم الشركة</label>
+                <input
+                  class="input-field"
+                  id="edit-company-name"
+                  name="companyName"
+                  type="text"
+                  autocomplete="organization"
+                  placeholder="اكتب اسم الشركة"
+                  required
+                />
+              </div>
+              <div class="field-stack">
+                <span class="input-label" id="edit-company-phone-label">رقم الشركة</span>
+                <div
+                  class="input-group input-group--prefix-start"
+                  role="group"
+                  aria-labelledby="edit-company-phone-label"
+                >
+                  <span class="input-group-prefix">
+                    <span class="input-latin">+966</span>
+                  </span>
+                  <input
+                    id="edit-company-phone"
+                    name="companyPhone"
+                    type="tel"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    maxlength="9"
+                    minlength="9"
+                    autocomplete="tel"
+                    placeholder="5xxxxxxxx"
+                    title="9 أرقام بدون الصفر أو رمز الدولة"
+                    class="input-latin"
+                    dir="ltr"
+                    aria-required="true"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="field-stack">
+              <label class="input-label" for="edit-company-website">رابط موقع الشركة</label>
+              <div class="input-group input-group--prefix-start">
+                <span class="input-group-prefix">
+                  <span class="input-latin">https://</span>
+                </span>
+                <input
+                  id="edit-company-website"
+                  name="websiteUrl"
+                  type="text"
+                  inputmode="url"
+                  autocomplete="url"
+                  placeholder="www.example.com"
+                  class="input-latin"
+                  dir="ltr"
+                />
+              </div>
+            </div>
+
+            <div class="edit-company-modal__actions">
+              <button type="submit" class="btn-primary edit-company-modal__submit">حفظ التغييرات</button>
+              <a href="../profile/index.html" class="edit-company-modal__btn-cancel">إلغاء</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../core/config.js"></script>
+    <script src="../../core/utils.js"></script>
+    <script src="../../core/api.js"></script>
+    <script src="../../components/file-upload/file-upload.js"></script>
+    <script src="edit-profile.js"></script>
+  </body>
+</html>
